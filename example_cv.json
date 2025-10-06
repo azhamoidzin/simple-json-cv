@@ -1,0 +1,176 @@
+{
+  "name": "John Doe",
+  "position": "Senior Software Engineer",
+  "contacts": [
+    {
+      "icon": "static/icons/email.svg",
+      "link": "mailto:john.doe@email.com",
+      "text": "john.doe@email.com"
+    },
+    {
+      "icon": "static/icons/phone.svg",
+      "link": "tel:+1234567890",
+      "text": "+1 (234) 567-890"
+    },
+    {
+      "icon": "static/icons/linkedin.svg",
+      "link": "https://linkedin.com/in/johndoe",
+      "text": "linkedin.com/in/johndoe"
+    },
+    {
+      "icon": "static/icons/location.svg",
+      "link": "",
+      "text": "San Francisco, CA"
+    }
+  ],
+  "summary": "Experienced software engineer with 8+ years of expertise in full-stack development, cloud architecture, and team leadership. Passionate about building scalable, user-friendly applications and mentoring junior developers. Proven track record of delivering high-quality software solutions in fast-paced environments.",
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "skills": [
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "Java",
+        "Go"
+      ]
+    },
+    {
+      "name": "Frameworks & Libraries",
+      "skills": [
+        "React",
+        "Node.js",
+        "Django",
+        "FastAPI",
+        "Spring Boot"
+      ]
+    },
+    {
+      "name": "Cloud & DevOps",
+      "skills": [
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "CI/CD"
+      ]
+    },
+    {
+      "name": "Databases",
+      "skills": [
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Elasticsearch"
+      ]
+    },
+    {
+      "name": "Tools & Platforms",
+      "skills": [
+        "Git",
+        "Jira",
+        "Confluence",
+        "Slack",
+        "VS Code"
+      ]
+    }
+  ],
+  "education_certificates": [
+    {
+      "name": "Bachelor of Science in Computer Science",
+      "date": "2015",
+      "description": "Stanford University, GPA: 3.8/4.0"
+    },
+    {
+      "name": "AWS Certified Solutions Architect",
+      "date": "2022",
+      "description": "Amazon Web Services - Professional Level"
+    },
+    {
+      "name": "Google Cloud Professional Developer",
+      "date": "2021",
+      "description": "Google Cloud Platform Certification"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "level": "Native"
+    },
+    {
+      "language": "Spanish",
+      "level": "Fluent"
+    },
+    {
+      "language": "French",
+      "level": "Intermediate"
+    },
+    {
+      "language": "German",
+      "level": "Basic"
+    }
+  ],
+  "experience": [
+    {
+      "company": "TechCorp Inc.",
+      "project": "E-commerce Platform",
+      "date_from": "Jan 2022",
+      "date_to": "Present",
+      "position": "Senior Software Engineer",
+      "description": "Lead development of a high-traffic e-commerce platform serving 1M+ users. Implemented microservices architecture and improved system performance by 40%.",
+      "stack": [
+        "Node.js",
+        "Python",
+        "MongoDB",
+        "Redis",
+        "Elasticsearch"
+      ],
+      "goals": [
+        "Architected and implemented microservices using Node.js and Python",
+        "Optimized database queries and reduced response time by 40%",
+        "Led a team of 5 developers and mentored junior engineers",
+        "Implemented CI/CD pipeline reducing deployment time by 60%"
+      ]
+    },
+    {
+      "company": "StartupXYZ",
+      "project": "Mobile App Development",
+      "date_from": "Mar 2020",
+      "date_to": "Dec 2021",
+      "position": "Full Stack Developer",
+      "description": "Developed a cross-platform mobile application using React Native and Node.js backend. Successfully launched MVP and acquired 10K+ users.",
+      "stack": [
+        "React Native",
+        "Node.js",
+        "MongoDB",
+        "Redis",
+        "Elasticsearch"
+      ],
+      "goals": [
+        "Built React Native mobile app with TypeScript",
+        "Developed RESTful API using Express.js and MongoDB",
+        "Implemented real-time features using WebSocket",
+        "Integrated payment processing with Stripe API"
+      ]
+    },
+    {
+      "company": "BigTech Corp",
+      "project": "Cloud Infrastructure",
+      "date_from": "Jun 2018",
+      "date_to": "Feb 2020",
+      "position": "Software Engineer",
+      "description": "Worked on cloud infrastructure automation and monitoring systems. Contributed to tools used by 100+ engineering teams.",
+      "stack": [
+        "Terraform",
+        "Prometheus",
+        "Grafana"
+      ],
+      "goals": [
+        "Developed infrastructure as code using Terraform",
+        "Built monitoring dashboards with Grafana and Prometheus",
+        "Automated deployment processes using Jenkins",
+        "Collaborated with DevOps team on security improvements"
+      ]
+    }
+  ]
+}

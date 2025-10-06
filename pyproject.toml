@@ -1,0 +1,13 @@
+[project]
+name = "simple-json-cv"
+version = "0.1.0"
+description = "A CV builder that generates professional PDF resumes from JSON data"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "jinja2>=3.1.0",
+    "weasyprint>=60.0",
+    "python-dateutil>=2.8.0",
+    "pyppeteer>=2.0.0",
+    "dotenv>=0.9.9",
+]

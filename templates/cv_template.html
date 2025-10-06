@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ name }} - {{ position }}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .cv-container {
+            max-width: 210mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: #f8f9fa;
+            color: #333;
+            padding: 30px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .header-left {
+            flex: 1;
+        }
+        
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+            color: #495057;
+        }
+        
+        .header h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #667eea;
+            margin-bottom: 0;
+        }
+        
+        .contacts {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-end;
+            min-width: 200px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+        
+        .contact-item .icon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+        
+        .contact-item a {
+            color: #495057;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            color: #667eea;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+        }
+        
+        .sidebar {
+            background: #f8f9fa;
+            padding: 30px;
+            border-right: 1px solid #e9ecef;
+        }
+        
+        .main-column {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section h3 {
+            color: #667eea;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            /* border-bottom: 2px solid #e9ecef; */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .skills-section {
+            margin-bottom: 10px;
+        }
+        
+        .skills-section h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 1px;
+        }
+        
+        .skills-list {
+            color: #6c757d;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .education-item, .certificate-item {
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            /* border-bottom: 1px solid #e9ecef; */
+        }
+        
+        .education-item:last-child, .certificate-item:last-child {
+            border-bottom: none;
+        }
+        
+        .education-item h4, .certificate-item h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 5px;
+        }
+        
+        .education-item .date, .certificate-item .date {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-bottom: 5px;
+        }
+        
+        .education-item .description, .certificate-item .description {
+            font-size: 0.85rem;
+            color: #495057;
+            line-height: 1.4;
+        }
+        
+        .language-item {
+            margin-bottom: 1px;
+            padding-bottom: 1px;
+        }
+        
+        .language-item h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 1px;
+        }
+        
+        .language-item .level {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-bottom: 0;
+        }
+        
+        .summary {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #495057;
+            margin-bottom: 30px;
+        }
+        
+        .experience-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        
+        .experience-header {
+            margin-bottom: 15px;
+        }
+        
+        .company-project-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        
+        .experience-header h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #495057;
+            margin: 0;
+            flex: 1;
+        }
+        
+        .position-date {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin: 0;
+            text-align: right;
+            min-width: 120px;
+        }
+        
+        .role {
+            font-size: 0.95rem;
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+        
+        .experience-description {
+            font-size: 0.9rem;
+            color: #495057;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .experience-stack {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+            padding: 8px 12px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .goals-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .goals-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: #495057;
+            line-height: 1.5;
+        }
+        
+        .goals-list li::before {
+            content: "•";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .credentials {
+            text-align: center;
+            padding: 10px 30px;
+            margin-top: 10px;
+            border-top: none;
+            background: transparent;
+        }
+        
+        .credentials p {
+            margin: 0;
+            font-size: 0.7rem;
+            color: #adb5bd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        
+        .credentials a {
+            color: #adb5bd;
+            text-decoration: none;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .credentials a:hover {
+            color: #6c757d;
+        }
+        
+        .github-icon {
+            width: 12px;
+            height: 12px;
+            fill: currentColor;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .cv-container {
+                margin: 0;
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .credentials {
+                background: transparent;
+                border-top: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1>{{ name }}</h1>
+                    <h2>{{ position }}</h2>
+                </div>
+                <div class="contacts">
+                    {% for contact in contacts %}
+                    <div class="contact-item">
+                        {% if contact.link %}
+                        <a href="{{ contact.link }}" target="_blank">{{ contact.text }}</a>
+                        {% else %}
+                        <span>{{ contact.text }}</span>
+                        {% endif %}
+                        {% if contact.icon %}
+                            {% if contact.icon.startswith('static/icons/') %}
+                                <img src="{{ contact.icon }}" alt="" class="icon">
+                            {% else %}
+                                <span class="icon">{{ contact.icon }}</span>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="section">
+                    <h3>Skills</h3>
+                    {% for skill_section in skills %}
+                    <div class="skills-section">
+                        <h4>{{ skill_section.name }}</h4>
+                        <div class="skills-list">{{ skill_section.skills | join(', ') }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="section">
+                    <h3>Education & Certificates</h3>
+                    {% for education in education_certificates %}
+                    <div class="education-item">
+                        <h4>{{ education.name }}</h4>
+                        <div class="date">{{ education.date }}</div>
+                        <div class="description">{{ education.description }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="section">
+                    <h3>Languages</h3>
+                    {% for language in languages %}
+                    <div class="language-item">
+                        <h4>{{ language.language }}: <span class="level">{{ language.level }}</span></h4>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="main-column">
+                <div class="section">
+                    <h3>Summary</h3>
+                    <div class="summary">{{ summary }}</div>
+                </div>
+                
+                <div class="section">
+                    <h3>Experience</h3>
+                    {% for experience in experience %}
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company-project-row">
+                                <h4>{{ experience.company }} - {{ experience.project }}</h4>
+                                <div class="position-date">{{ experience.date_from }} - {{ experience.date_to }}</div>
+                            </div>
+                            <div class="role">{{ experience.position }}</div>
+                        </div>
+                        {% if experience.stack %}
+                        <div class="experience-stack">
+                            <strong>Tech Stack:</strong> {{ experience.stack | join(', ') }}
+                        </div>
+                        {% endif %}
+                        <div class="experience-description">{{ experience.description }}</div>
+                        {% if experience.goals %}
+                        <ul class="goals-list">
+                            {% for goal in experience.goals %}
+                            <li>{{ goal }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Credentials Section -->
+        <div class="credentials">
+            <p>Generated with <a href="https://github.com/azhamoidzin/simple-json-cv" target="_blank">
+                <svg class="github-icon" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                azhamoidzin/simple-json-cv
+            </a></p>
+        </div>
+    </div>
+</body>
+</html>
